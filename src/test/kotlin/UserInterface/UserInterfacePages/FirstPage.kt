@@ -5,4 +5,8 @@ import org.openqa.selenium.WebDriver
 
 class FirstPage(val driver: WebDriver) {
     val googleImg: By = By.xpath("//img[@alt='Google']")
+
+    fun isGoogleImgVisible() {
+        driver.findElement(googleImg)
+    }
 }

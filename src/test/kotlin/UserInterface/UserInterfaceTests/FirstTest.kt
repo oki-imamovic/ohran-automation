@@ -29,7 +29,7 @@ class FirstTest {
     fun firstTest() {
         val url = "https://www.google.com/"
         driver!!.get(url)
-        driver!!.findElement(firstPage!!.googleImg)
+        firstPage!!.isGoogleImgVisible()
         assertEquals(driver!!.currentUrl, url, "Web page URL did not match expected Value")
     }
 }
