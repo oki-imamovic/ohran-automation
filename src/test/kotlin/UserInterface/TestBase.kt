@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver
 import org.testng.annotations.AfterTest
 import org.testng.annotations.BeforeTest
 
-abstract class BaseTest {
+abstract class TestBase {
 
     lateinit var driver: WebDriver
         private set
