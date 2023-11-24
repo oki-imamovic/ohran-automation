@@ -1,35 +1,26 @@
 package UserInterface.UserInterfaceTests // ktlint-disable package-name
 
+import UserInterface.BaseTest
 import UserInterface.UserInterfacePages.FirstPage
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.chrome.ChromeDriver
 import org.testng.Assert.assertEquals
-import org.testng.annotations.AfterTest
-import org.testng.annotations.BeforeTest
+import org.testng.Assert.assertTrue
+import org.testng.annotations.BeforeClass
 import org.testng.annotations.Test
 
-class FirstTest {
+class FirstTest : BaseTest() {
 
-    private var driver: WebDriver? = null
     private var firstPage: FirstPage? = null
 
-    @BeforeTest
-    fun setupDriverAndPage() {
-        System.setProperty("webdriver.chrome.driver", "src/test/kotlin/chromedriver/chromedriver.exe")
-        driver = ChromeDriver()
-        firstPage = FirstPage(driver!!)
-    }
-
-    @AfterTest
-    fun killDriver() {
-        driver!!.quit()
+    @BeforeClass
+    fun initPageObjects() {
+        firstPage = FirstPage(driver)
     }
 
     @Test
     fun firstTest() {
         val url = "https://www.google.com/"
-        driver!!.get(url)
-        firstPage!!.isGoogleImgVisible()
-        assertEquals(driver!!.currentUrl, url, "Web page URL did not match expected Value")
+        driver.get(url)
+        assertTrue(firstPage!!.isGoogleImgVisible, "Google Image is missing")
+        assertEquals(driver.currentUrl, url, "Web page URL did not match expected Value")
     }
 }
