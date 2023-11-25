@@ -11,7 +11,7 @@ AC: As user I need to check :
 
 Test Steps:
 
-GIVEN I navigate to https://www.saucedemo.com/
+GIVEN I navigate to https://www.saucedemo.com/ - PASS
 AND I input wrong username
 AND I input right password
 AND I click on Login button
@@ -20,10 +20,10 @@ AND I input right username
 AND I input wrong password
 AND I click on Login button
 THEN I see error toast message
-AND I input right username
-AND I input right password
-AND I click on Login button
-THEN I am logged in and I can see Inventory/Home page displayed
+AND I input right username - PASS
+AND I input right password - PASS
+AND I click on Login button - PASS
+THEN I am logged in and I can see Inventory/Home page displayed - PASS
 AND I can filter the page by name and price
 AND I can click on Cart icon on the top right corner 
 THEN I am on Cart page and I can check if the list is empty at start
