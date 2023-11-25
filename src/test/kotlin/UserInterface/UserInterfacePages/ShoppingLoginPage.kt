@@ -12,6 +12,9 @@ class ShoppingLoginPage(driver: WebDriver) {
         PageFactory.initElements(driver, this)
     }
 
+    @FindBy(className = "error-button")
+    var loginErrorButton: WebElement? = null
+
     @FindBy(xpath = "//div[@class='login_wrapper-inner']")
     var loginFormWrapper: WebElement? = null
 
@@ -25,18 +28,27 @@ class ShoppingLoginPage(driver: WebDriver) {
     var loginPageLoginButton: WebElement? = null
 
     val isLoginPageDisplayed: Boolean get() = loginFormWrapper!!.isDisplayed
+    val isLoginErrorDisplayed: Boolean get() = loginErrorButton!!.isDisplayed
 
     fun inputUserName(userName: String) {
         loginPageUserNameInputField!!.click()
+        loginPageUserNameInputField!!.clear()
         loginPageUserNameInputField!!.sendKeys(userName)
     }
 
     fun inputUserPassword(password: String) {
         loginPagePasswordInputField!!.click()
+        loginPagePasswordInputField!!.clear()
         loginPagePasswordInputField!!.sendKeys(password)
     }
 
     fun clickOnLoginButton() {
         loginPageLoginButton!!.click()
+    }
+
+    fun doLogin(userName: String, password: String) {
+        inputUserName(userName)
+        inputUserPassword(password)
+        clickOnLoginButton()
     }
 }

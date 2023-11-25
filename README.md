@@ -18,4 +18,4 @@ Tutorial for installing java : https://www.youtube.com/watch?v=-O4QVijnA7Y&ab_ch
 
 5. Click on the project name in InteliJ then click on src/test/kotlin/org.example/UITests/{wished test file}
 
-6. click on green play button on the fun of the test
+6. Click on green play button on the fun of the test

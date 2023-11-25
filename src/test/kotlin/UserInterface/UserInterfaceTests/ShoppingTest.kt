@@ -24,13 +24,20 @@ class ShoppingTest : TestBase() {
     fun shoppingTest() {
         driver.get(url)
         assertTrue(shoppingLoginPage!!.isLoginPageDisplayed)
-        shoppingLoginPage!!.inputUserName(USER_NAME)
-        shoppingLoginPage!!.inputUserPassword(PASSWORD)
-        shoppingLoginPage!!.clickOnLoginButton()
+        // wrong username check
+        shoppingLoginPage!!.doLogin(WRONG_USER_NAME, PASSWORD)
+        assertTrue(shoppingLoginPage!!.isLoginErrorDisplayed)
+        // wrong password
+        shoppingLoginPage!!.doLogin(USER_NAME, WRONG_PASSWORD)
+        assertTrue(shoppingLoginPage!!.isLoginErrorDisplayed)
+        // right login
+        shoppingLoginPage!!.doLogin(USER_NAME, PASSWORD)
         assertTrue(shoppingInventoryPage!!.isInventoryListContainerDisplayed)
     }
 
     companion object {
+        const val WRONG_USER_NAME: String = "wrong_user_name"
+        const val WRONG_PASSWORD: String = "wrong_password"
         const val USER_NAME: String = "standard_user"
         const val PASSWORD: String = "secret_sauce"
     }

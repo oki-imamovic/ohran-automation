@@ -12,14 +12,14 @@ AC: As user I need to check :
 Test Steps:
 
 GIVEN I navigate to https://www.saucedemo.com/ - PASS
-AND I input wrong username
-AND I input right password
-AND I click on Login button
-THEN I see error toast message
-AND I input right username
-AND I input wrong password
-AND I click on Login button
-THEN I see error toast message
+AND I input wrong username - PASS
+AND I input right password - PASS
+AND I click on Login button - PASS
+THEN I see error toast message - PASS
+AND I input right username - PASS
+AND I input wrong password - PASS
+AND I click on Login button - PASS
+THEN I see error toast message - PASS
 AND I input right username - PASS
 AND I input right password - PASS
 AND I click on Login button - PASS
