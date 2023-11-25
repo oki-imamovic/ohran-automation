@@ -9,49 +9,50 @@ AC: As user I need to check :
 - Navbar on the left side should work (All Items, Reset App State and Logout)
 - Cart Page should display all the items I add to the cart, delete items, continue shopping button and checkout button (icon on top right corner)
 
-Test Steps:
+Test Steps (Gherkin Syntax):
 
 GIVEN I navigate to https://www.saucedemo.com/ - PASS
-AND I input wrong username - PASS
-AND I input right password - PASS
+AND I input wrong UserName - PASS
+AND I input right Password - PASS
 AND I click on Login button - PASS
 THEN I see error toast message - PASS
-AND I input right username - PASS
-AND I input wrong password - PASS
+AND I input right UserName - PASS
+AND I input wrong Password - PASS
 AND I click on Login button - PASS
 THEN I see error toast message - PASS
-AND I input right username - PASS
-AND I input right password - PASS
+AND I input right UserName - PASS
+AND I input right Password - PASS
 AND I click on Login button - PASS
-THEN I am logged in and I can see Inventory/Home page displayed - PASS
-AND I can filter the page by name and price
-AND I can click on Cart icon on the top right corner 
-THEN I am on Cart page and I can check if the list is empty at start
-AND I click on continue shopping button
-THEN I am back on Home/Inventory page
-AND I add three items to cart
-AND I click on cart icon on top right corner
-THEN I am on Cart page
-AND I can see three items in the cart
-AND I can remove item from the cart
-AND I click on Continue Shopping Button
-THEN I am back on Home/Inventory page
-AND I remove one more item that I added
-AND I click on Cart icon on the top right corner
-THEN I am on Cart page
-AND I make sure there is one item on the page
-AND I click on Checkout Button
-THEN I am on checkout page
-AND I input fake First Name
-AND I input fake Last Name
-AND I input fake zip code
-AND I click on Continue Button
-THEN I on checkout payment page
-AND I can see my item on the list
-AND I click on Finish
-AND I see toast message thanking me for shopping
-AND I click on Back Home button
-THEN I can see Inventory/Home page displayed
-AND I click on right navigation drop down
-AND I click on Log Out option
-THEN I am back on Login Page
+THEN I am logged in - PASS
+AND I can see Inventory/Home page displayed - PASS
+AND I can filter the page by name and price - PASS
+AND I can click on Cart icon on the top right corner - PASS
+THEN I am on Cart page and I can check if the list is empty at start- PASS
+AND I click on continue shopping button - PASS
+THEN I am back on Home/Inventory page - PASS
+AND I add three items to cart - PASS
+AND I click on cart icon on top right corner - PASS
+THEN I am on Cart page - PASS
+AND I can see three items in the cart - PASS
+AND I can remove item from the cart - PASS
+AND I click on Continue Shopping Button - PASS
+THEN I am back on Home/Inventory page - PASS
+AND I remove one more item that I added - PASS
+AND I click on Cart icon on the top right corner - PASS
+THEN I am on Cart page - PASS
+AND I make sure there is one item on the page - PASS
+AND I click on Checkout Button - PASS
+THEN I am on checkout page - PASS
+AND I input fake First Name - PASS
+AND I input fake Last Name - PASS
+AND I input fake zip code - PASS
+AND I click on Continue Button - PASS
+THEN I on checkout payment page - PASS
+AND I can see my item on the list - PASS
+AND I click on Finish - PASS
+AND I see toast message thanking me for shopping - PASS
+AND I click on Back Home button - PASS
+THEN I can see Inventory/Home page displayed - PASS
+AND I click on right navigation drop down - PASS
+AND I click on Log Out option - PASS
+THEN I am back on Login Page - PASS

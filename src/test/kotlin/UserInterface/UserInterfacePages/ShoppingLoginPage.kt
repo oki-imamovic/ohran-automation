@@ -30,19 +30,19 @@ class ShoppingLoginPage(driver: WebDriver) {
     val isLoginPageDisplayed: Boolean get() = loginFormWrapper!!.isDisplayed
     val isLoginErrorDisplayed: Boolean get() = loginErrorButton!!.isDisplayed
 
-    fun inputUserName(userName: String) {
+    private fun inputUserName(userName: String) {
         loginPageUserNameInputField!!.click()
         loginPageUserNameInputField!!.clear()
         loginPageUserNameInputField!!.sendKeys(userName)
     }
 
-    fun inputUserPassword(password: String) {
+    private fun inputUserPassword(password: String) {
         loginPagePasswordInputField!!.click()
         loginPagePasswordInputField!!.clear()
         loginPagePasswordInputField!!.sendKeys(password)
     }
 
-    fun clickOnLoginButton() {
+    private fun clickOnLoginButton() {
         loginPageLoginButton!!.click()
     }
 
