@@ -23,16 +23,16 @@ class ShoppingCartPage(driver: WebDriver) {
     @FindBy(xpath = "//button[@class='btn btn_secondary btn_small cart_button']")
     var removeButtonList: MutableList<WebElement>? = null
 
-    fun removeItemFromCart() {
-        removeButtonList!![0].click()
-    }
-
     fun clickOnContinueShoppingButton() {
         continueShoppingButton!!.click()
     }
 
     fun clickOnCheckoutButton() {
         checkoutButton!!.click()
+    }
+
+    fun removeItemFromCart() {
+        removeButtonList!![0].click()
     }
 
     fun areCartItemExisting(): Boolean {

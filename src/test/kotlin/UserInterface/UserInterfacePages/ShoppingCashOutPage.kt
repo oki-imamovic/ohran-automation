@@ -11,9 +11,6 @@ class ShoppingCashOutPage(driver: WebDriver) {
         PageFactory.initElements(driver, this)
     }
 
-    @FindBy(className = "checkout_info")
-    var cashOutForm: WebElement? = null
-
     @FindBy(id = "first-name")
     var firstNameInput: WebElement? = null
 
@@ -26,9 +23,6 @@ class ShoppingCashOutPage(driver: WebDriver) {
     @FindBy(id = "continue")
     var continueButton: WebElement? = null
 
-    @FindBy(className = "summary_info")
-    var summaryContainer: WebElement? = null
-
     @FindBy(id = "finish")
     var finishButton: WebElement? = null
 
@@ -37,6 +31,12 @@ class ShoppingCashOutPage(driver: WebDriver) {
 
     @FindBy(id = "back-to-products")
     var backToHomeButton: WebElement? = null
+
+    @FindBy(className = "checkout_info")
+    var cashOutForm: WebElement? = null
+
+    @FindBy(className = "summary_info")
+    var summaryContainer: WebElement? = null
 
     val isCashOutFormVisible: Boolean get() = cashOutForm!!.isDisplayed
     val isSummaryContainerVisible: Boolean get() = summaryContainer!!.isDisplayed
@@ -48,6 +48,10 @@ class ShoppingCashOutPage(driver: WebDriver) {
 
     fun clickOnBackHomeButton() {
         backToHomeButton!!.click()
+    }
+
+    private fun clickOnContinueButton() {
+        continueButton!!.click()
     }
 
     private fun inputFirstName(firstName: String) {
@@ -66,10 +70,6 @@ class ShoppingCashOutPage(driver: WebDriver) {
         zipCodeInput!!.click()
         zipCodeInput!!.clear()
         zipCodeInput!!.sendKeys(zipCode)
-    }
-
-    private fun clickOnContinueButton() {
-        continueButton!!.click()
     }
 
     fun fillOutForm(firstName: String, lastName: String, zipCode: String) {

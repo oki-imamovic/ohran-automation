@@ -11,14 +11,14 @@ class ShoppingItemPage(driver: WebDriver) {
         PageFactory.initElements(driver, this)
     }
 
+    @FindBy(id = "back-to-products")
+    var backToProductButton: WebElement? = null
+
     @FindBy(className = "inventory_details_name")
     var itemName: WebElement? = null
 
     @FindBy(className = "btn_inventory")
     var addToCartButton: WebElement? = null
-
-    @FindBy(id = "back-to-products")
-    var backToProductButton: WebElement? = null
 
     fun clickOnBackToProductButton() {
         backToProductButton!!.click()
